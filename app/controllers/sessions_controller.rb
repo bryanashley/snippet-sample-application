@@ -8,6 +8,10 @@ class SessionsController < ApplicationController
     redirect_to sites_url
   end
 
+  def delete
+    
+  end
+
   protected
 
   def auth_hash

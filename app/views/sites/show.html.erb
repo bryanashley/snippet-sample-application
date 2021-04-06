@@ -1,0 +1,17 @@
+<h1> <%= @site['site_title'] %></h1>
+<% if @site['is_published'] %>
+  <a href="https://<%= @site['domain'] %>"> <%= @site['domain'] %> </a>
+<% end %>
+
+<% if @snippet %> 
+<%= button_to "Remove #{@snippet['content'][187]}", site_snippet_path(@snippet['site_id'], @snippet['id']), :method => :delete %> </p>
+<% end %>
+
+<p> Update your site's cursor! </p>
+
+<%= button_to "👍", site_snippets_path(@site['id']), params: {snippet: {emoji: "👍"}}, :method => :post %> 
+<%= button_to "😀", site_snippets_path(@site['id']), params: {snippet: {emoji: "😀"}}, :method => :post %> 
+<%= button_to "🤔", site_snippets_path(@site['id']), params: {snippet: {emoji: "🤔"}}, :method => :post %> 
+<%= button_to "❤️", site_snippets_path(@site['id']), params: {snippet: {emoji: "❤️"}}, :method => :post %> 
+<%= button_to "💯", site_snippets_path(@site['id']), params: {snippet: {emoji: "💯"}}, :method => :post %> 
+<%= button_to "🚀", site_snippets_path(@site['id']), params: {snippet: {emoji: "🚀"}}, :method => :post %> 
