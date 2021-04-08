@@ -4,18 +4,16 @@ class SnippetsController < ApplicationController
 
   def create
     @emoji = create_params[:emoji]
-    snippet_content = render_to_string partial: 'snippets/inject'
-    begin
-      res = RestClient.post "https://connect.squareup.com/v2/sites/#{params[:site_id]}/snippet", JSON.generate({"snippet": {"content": snippet_content}}), {'Content-Type': 'application/json', 'Authorization': "Bearer #{session[:auth]['credentials']['token']}"}
-    rescue RestClient::ExceptionWithResponse => e
-    end
-    redirect_to site_path(params[:site_id])
+    square_client.upsert_snippet(params[:site_id], render_to_string(partial: 'snippets/inject'))
+
+    redirect_to site_path params[:site_id]
   end
 
   def destroy
-    res = RestClient.delete "https://connect.squareup.com/v2/sites/#{params[:site_id]}/snippet", {'Content-Type': 'application/json', 'Authorization': "Bearer #{session[:auth]['credentials']['token']}"}
-    redirect_to site_path(params[:site_id])
+    square_client.delete_snippet params[:site_id]
+    redirect_to site_path params[:site_id]
   end
+
 
   private
 
