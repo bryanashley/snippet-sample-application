@@ -5,10 +5,10 @@ class ApplicationController < ActionController::Base
   end
 
   def square_client
-    squareApiClient = Square::SquareApiClient.new
-    squareApiClient.access_token = session[:auth]['credentials']['token']
+    square_api_client = Square::SquareApiClient.new
+    square_api_client.access_token = session[:auth]['credentials']['token']
 
-    return squareApiClient
+    return square_api_client
   end
 
 end
