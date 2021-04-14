@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Square Online Store Snippets Example
 
-Things you may want to cover:
+### Setup 
 
-* Ruby version
+The sample app currently runs on: 
 
-* System dependencies
+  Ruby Version: 2.5.8 
+  
+  Rails Version: 6.1.3.1 
 
-* Configuration
+1. To run this app locally using Docker Compose, you must have first have [Docker Compose installed](https://docs.docker.com/compose/install/)
+2. Once installed you can run `docker-compose run build` to build the application
+3. Update the .env file at the root with following values: (WARNING: never upload .env with your credentials/access_token)
+```
+SQUARE_APPLICATION_ID=your-app-id
+SQUARE_ACCESS_TOKEN=your-app-access-token
+```
+4. Then run `docker-compose up` to start the rails web server 
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The application will then run and be accessible at http://localhost:3000
