@@ -16,8 +16,8 @@
   <ul class='option-list'>
     <% @options.each do |e|%>
       <li>
-        <h3 class='site-heading'><%= e %></h3>
-        <%= button_to site_snippets_path(@site['id']), turbolinks_form: true, params: {snippet: {emoji: e}}, :method => :post do %> 
+        <h2 class='site-heading'><%= e %></h2>
+        <%= button_to site_snippets_path(@site['id']), params: {snippet: {emoji: e}}, :method => :post do %> 
           <input onclick="SelectEmoji(this)" class="opt" type="radio" name="emoji" value="<%= e %>" <%= 'checked' if @emoji == e %> />
         <% end %>
       </li>

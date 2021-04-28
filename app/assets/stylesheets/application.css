@@ -150,7 +150,7 @@ body {
 }
 
 .cursor-form .heading  {
-  margin-top: 40px;
+  margin-top: 25px;
 }
 
 .option-list {
@@ -163,6 +163,7 @@ body {
   align-items: center;
   justify-content: space-between;
   box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.05);
+  height: 50px;
 }
 
 .option-list button {
@@ -180,12 +181,8 @@ body {
   font-family: 'Square Market';
   font-weight: bold;
   height: 48px;
-  border-radius: 6px;
-  background-color:#CC0023;
-  border-color:#CC0023;
-  color: #fff;
-  border-style: solid;
-  padding: 0px 20px;
+  color: #CC0023;
+  border-style: none;
 }
 
 .action-list {
