@@ -8,6 +8,7 @@ class SitesController < ApplicationController
   end
 
   def show
+    @options = ['👉', '😁', '👻', '💯', '🚀', '🥕']
     @sites = square_client.list_sites
     Rails.logger.debug(@sites)
     @site = @sites.select {|site| site.id === params[:id]}.first

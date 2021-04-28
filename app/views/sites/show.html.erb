@@ -14,42 +14,14 @@
   <h2 class='heading'>Cursor Selection</h2>
   <p>This sets the cursor visitors see when using your online store.</p>
   <ul class='option-list'>
-    <li>
-      <h3 class='site-heading'>👉</h3>
-      <%= button_to site_snippets_path(@site['id']), turbolinks_form: true, params: {snippet: {emoji: "👉"}}, :method => :post do %> 
-        <input onclick="SelectEmoji(this)" class="opt" type="radio" name="emoji" value="👉" <%= 'checked' if @emoji == '👉' %> />
-      <% end %>
-    </li>
-    <li>
-      <h3 class='site-heading'>😁</h3>
-      <%= button_to site_snippets_path(@site['id']), turbolinks_form: true, params: {snippet: {emoji: "😁"}}, :method => :post do %> 
-        <input onclick="SelectEmoji(this)" class="opt" type="radio" name="emoji" value="😁" <%= 'checked' if @emoji == '😁' %> />
-      <% end %>
-    </li>
-    <li>
-      <h3 class='site-heading'>👻</h3>
-      <%= button_to site_snippets_path(@site['id']), turbolinks_form: true, params: {snippet: {emoji: "👻"}}, :method => :post do %> 
-        <input onclick="SelectEmoji(this)" class="opt" type="radio" name="emoji" value="👻" <%= 'checked' if @emoji == '👻' %> />
-      <% end %>
-    </li>
-    <li>
-      <h3 class='site-heading'>💯</h3>
-      <%= button_to site_snippets_path(@site['id']), turbolinks_form: true,  params: {snippet: {emoji: "💯"}}, :method => :post do %> 
-        <input onclick="SelectEmoji(this)" class="opt" type="radio" name="emoji" value="💯" <%= 'checked' if @emoji == '💯' %> />
-      <% end %>
-    </li>
-    <li>
-      <h3 class='site-heading'>🚀</h3>
-      <%= button_to site_snippets_path(@site['id']), params: {snippet: {emoji: "🚀"}}, :method => :post do %> 
-        <input onclick="SelectEmoji(this)" class="opt" type="radio" name="emoji" value="🚀" <%= 'checked' if @emoji == '🚀' %> />
-      <% end %>
-    </li>
-    <li>
-      <h3 class='site-heading'>🥕</h3>
-      <%= button_to site_snippets_path(@site['id']), params: {snippet: {emoji: "🥕"}}, :method => :post do %> 
-        <input onclick="SelectEmoji(this)" class="opt" type="radio" name="emoji" value="🥕" <%= 'checked' if @emoji == '🥕' %> />
-      <% end %>
-    </li>
+    <% @options.each do |e|%>
+      <li>
+        <h3 class='site-heading'><%= e %></h3>
+        <%= button_to site_snippets_path(@site['id']), turbolinks_form: true, params: {snippet: {emoji: e}}, :method => :post do %> 
+          <input onclick="SelectEmoji(this)" class="opt" type="radio" name="emoji" value="<%= e %>" <%= 'checked' if @emoji == e %> />
+        <% end %>
+      </li>
+    <% end %>
   </ul>
   
   <% if @snippet %> 
