@@ -147,7 +147,7 @@ body {
 }
 
 .cursor-form .heading  {
-  margin-top: 40px;
+  margin-top: 25px;
 }
 
 .option-list {
@@ -160,6 +160,7 @@ body {
   align-items: center;
   justify-content: space-between;
   box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.05);
+  height: 50px;
 }
 
 .option-list button {
