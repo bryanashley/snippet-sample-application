@@ -177,12 +177,8 @@ body {
   font-family: 'Square Market';
   font-weight: bold;
   height: 48px;
-  border-radius: 6px;
-  background-color:#CC0023;
-  border-color:#CC0023;
-  color: #fff;
-  border-style: solid;
-  padding: 0px 20px;
+  color: #CC0023;
+  border-style: none;
 }
 
 .action-list {
