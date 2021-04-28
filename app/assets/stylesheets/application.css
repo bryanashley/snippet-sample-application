@@ -105,8 +105,9 @@ body {
   align-items: center;
   letter-spacing: 0.003em;
 }
+
 .main {
-  min-height: 100vh;
+  min-height: calc(100vh - 60px);
   display: flex;
 }
 
