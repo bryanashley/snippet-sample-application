@@ -5,6 +5,7 @@ WORKDIR /snippet_sample
 COPY Gemfile /snippet_sample/Gemfile
 COPY Gemfile.lock /snippet_sample/Gemfile.lock
 RUN bundle install
+RUN rails webpacker:install
 COPY . /snippet_sample
 
 COPY entrypoint.sh /usr/bin/

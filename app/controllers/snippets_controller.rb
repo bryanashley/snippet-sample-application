@@ -18,7 +18,7 @@ class SnippetsController < ApplicationController
   private
 
   def validate_emoji
-    render json: {error: "Invalid Emoji"}, status: 400 unless ["👍","😀", "🤔", "❤️", "💯", "🚀"].include?(create_params[:emoji])
+    render json: {error: "Invalid Emoji"}, status: 400 unless ["👉","😁", "👻", "🥕", "💯", "🚀"].include?(create_params[:emoji])
   end
 
   def create_params
