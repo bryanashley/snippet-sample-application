@@ -7,5 +7,15 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import "channels"
 
+// Simple helper method for handling emoji selection
+window.SelectEmoji = function(target) {
+    document.querySelectorAll(".opt").forEach((el) => { 
+        if(el != target){
+            el.checked = false
+        }
+    });
+    target.form.submit()
+}
+
 Rails.start()
 Turbolinks.start()
