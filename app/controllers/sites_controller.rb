@@ -13,7 +13,7 @@ class SitesController < ApplicationController
     Rails.logger.debug(@sites)
     @site = @sites.select {|site| site.id === params[:id]}.first
     @snippet = square_client.get_snippet(@site['id'])
-    @emoji = @snippet['content'][187] unless @snippet.nil?
+    @emoji = @snippet['content'][195] unless @snippet.nil?
   end
 
 end
